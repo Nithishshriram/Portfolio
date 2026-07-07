@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Update PORTFOLIO_URL below after deployment. */
   const PORTFOLIO_URL = window.location.href.includes('http')
     ? window.location.href.split('#')[0]
-    : 'https://your-portfolio-url-goes-here.com';
+    : 'https://nithishshriram.github.io/Portfolio/';
   if (window.QRCode) {
     new QRCode(document.getElementById('qrcode'), {
       text: PORTFOLIO_URL,
