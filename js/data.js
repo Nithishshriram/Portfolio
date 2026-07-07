@@ -139,8 +139,8 @@ const PORTFOLIO_DATA = {
       contribution:
         "Led the organizational analysis using SWOT and BCG Matrix frameworks, then authored a phased manual-to-digital transition strategy.",
       tech: ["SWOT Analysis", "BCG Matrix", "Excel", "Financial Modeling"],
-      image: "",          // optional: path to a screenshot/graphic in /assets
-      pdfLink: ""         // optional: path or URL to a project write-up PDF
+      image: "assets/bright_castings_financial_dashboard.html",          
+      pdfLink: "assets/CONSOLIDATED REPORT.pdf"         
     },
     {
       title: "E-Waste & Logistics Dashboard",
@@ -152,8 +152,8 @@ const PORTFOLIO_DATA = {
       contribution:
         "Designed the dashboard structure and logistics tracking logic to visualize material flow end-to-end.",
       tech: ["Power BI", "Logistics Design", "Reverse Supply Chain"],
-      image: "",
-      pdfLink: ""
+      image: "assets/GREEN ERA CERTIFICATE.pdf",
+      pdfLink: "assets/PROJECT REPORT.pdf"
     },
     {
       title: "Employee Productivity & Stress Monitoring System",
@@ -181,7 +181,7 @@ const PORTFOLIO_DATA = {
       issuer: "TCS iON",
       date: "",
       credentialId: "",
-      verifyUrl: ""
+      verifyUrl: "assets/404195_71315_7877138.pdf"
     },
     {
       name: "Advanced Google Analytics",
@@ -195,7 +195,7 @@ const PORTFOLIO_DATA = {
       issuer: "Accenture",
       date: "",
       credentialId: "",
-      verifyUrl: ""
+      verifyUrl: "assets/digital-skills-digital-marketing_certificate_of_achievement_ronn962.pdf"
     },
     {
       name: "Service Design",
@@ -216,7 +216,7 @@ const PORTFOLIO_DATA = {
       issuer: "Microsoft",
       date: "",
       credentialId: "",
-      verifyUrl: ""
+      verifyUrl: "assets/NITHISH SHRIRAM_S S-BAAP_CERT (1).pdf"
     }
   ],
 
