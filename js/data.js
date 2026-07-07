@@ -29,7 +29,7 @@ const PORTFOLIO_DATA = {
     email: "nithishshriram@gmail.com",
     phone: "+91 96002 55804",
     linkedin: "https://linkedin.com/in/nithishshriram",
-    github: "",                 // add a GitHub URL here if you have one — leave blank to hide the icon
+    github: "https://nithishshriram.github.io/Portfolio/",        
     resumeFile: "assets/Nithish_Shriram_Resume.pdf",
     // Live counters shown in the hero "dashboard" widget — pulled straight from your real results
     heroStats: [
