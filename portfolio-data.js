@@ -7,14 +7,14 @@ const PORTFOLIO_DATA = {
     role: "MBA Candidate",
     subRole: "Operations & Analytics Specialist",
     summary: "MBA candidate with 1+ year of experience in operations, process optimization, and KPI dashboard development, having reduced manual effort by 30% and improved reporting accuracy by 15% through automation. Seeking an MBA internship in Operations Management, Supply Chain, or Business Process Improvement.",
-    avatar: "", // Add a URL here if you have a profile picture
+    avatar: "", // profile picture url
     contact: {
       email: "nithishshriram@gmail.com",
       phone: "+91 9600255804",
       location: "Coimbatore, India",
       linkedin: "https://linkedin.com/in/nithishshriram",
-      github: "https://github.com/nithishshriram", // Update with your actual GitHub if different
-      resumeDownloadUrl: "#" // Link your PDF resume here (e.g. "./Nithish_Shriram_Resume.pdf")
+      github: "https://github.com/Nithishshriram", 
+      resumeDownloadUrl: "#" // Link of PDF 
     }
   },
 
