@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithish Shriram | Interactive Professional Portfolio</title>
+    
+    <!-- Google Fonts: Outfit (for premium headings) & Inter (for clean body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cobalt: {
+                            50: '#f0f3ff',
+                            100: '#e1e7ff',
+                            200: '#c8d4ff',
+                            300: '#a3b6ff',
+                            400: '#7a8fff',
+                            500: '#5364ff',
+                            600: '#3a3fff',
+                            700: '#2563eb', // Core Royal Blue
+                            800: '#1d4ed8',
+                            900: '#1e3a8a',
+                            950: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 font-sans">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/75 dark:bg-slate-950/75 border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="font-heading font-extrabold text-xl tracking-tight text-cobalt-700 dark:text-white flex items-center gap-2">
+                <span class="bg-cobalt-700 dark:bg-white text-white dark:text-slate-950 w-8 h-8 rounded-lg flex items-center justify-center font-bold text-lg">N</span>
+                <span>SHRIRAM</span>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="#about" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">About</a>
+                <a href="#kpi" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">Impact</a>
+                <a href="#skills" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">Projects</a>
+                <a href="#certifications" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">Credentials</a>
+                <a href="#contact" class="hover:text-cobalt-700 dark:hover:text-white transition-colors">Contact</a>
+            </nav>
+            
+            <!-- Theme Toggle & Action Buttons -->
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon text-slate-600 dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline text-amber-400 text-lg"></i>
+                </button>
+                
+                <!-- Quick Contact Action -->
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-cobalt-700 hover:bg-cobalt-800 text-white dark:bg-white dark:hover:bg-slate-200 dark:text-slate-950 font-semibold rounded-xl text-sm transition-all hover:shadow-lg hover:shadow-cobalt-700/25 dark:hover:shadow-white/10">
+                    Get In Touch
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-xl py-6 px-6 flex flex-col gap-4 animate-fade-in">
+            <a href="#about" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">About</a>
+            <a href="#kpi" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">Impact Dashboard</a>
+            <a href="#skills" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">Skills & Tools</a>
+            <a href="#experience" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">Work History</a>
+            <a href="#projects" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">Key Projects</a>
+            <a href="#certifications" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">Credentials</a>
+            <a href="#contact" class="mobile-nav-link text-slate-600 dark:text-slate-300 hover:text-cobalt-700 dark:hover:text-white font-medium py-1">Contact</a>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-5 py-3 bg-cobalt-700 hover:bg-cobalt-800 text-white font-semibold rounded-xl text-sm transition-all mt-2">
+                Get In Touch
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+        <!-- Abstract reference background graphics -->
+        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-cobalt-700/10 dark:bg-cobalt-700/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-sky-500/10 dark:bg-sky-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Typography content -->
+            <div class="lg:col-span-7 flex flex-col items-start text-left" data-aos="fade-right" data-aos-duration="1000">
+                <!-- Branding Tag -->
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cobalt-50 dark:bg-cobalt-950/50 border border-cobalt-200/50 dark:border-cobalt-800/50 text-cobalt-700 dark:text-cobalt-300 font-semibold text-xs uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-cobalt-700 dark:bg-cobalt-400 animate-pulse"></span>
+                    Available for Internships & Full-time
+                </span>
+                
+                <h1 id="hero-name" class="font-heading font-extrabold text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight mb-4">
+                    NITHISH SHRIRAM
+                </h1>
+                
+                <h2 id="hero-role" class="font-heading font-bold text-2xl sm:text-3xl text-cobalt-700 dark:text-cobalt-400 mb-6">
+                    MBA Candidate | Operations & Analytics Specialist
+                </h2>
+                
+                <p id="hero-summary" class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+                    MBA candidate with 1+ year of experience in operations, process optimization, and KPI dashboard development. Proven track record reducing manual effort by 30% and improving accuracy by 15% through data-driven automation.
+                </p>
+                
+                <!-- CTA Action buttons -->
+                <div class="flex flex-wrap items-center gap-4 mb-10 w-full sm:w-auto">
+                    <a id="hero-download" href="#" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-cobalt-700 hover:bg-cobalt-800 text-white dark:bg-white dark:hover:bg-slate-200 dark:text-slate-950 font-bold rounded-xl text-base shadow-lg shadow-cobalt-700/20 dark:shadow-white/5 transition-all hover:-translate-y-0.5">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        Download Resume (PDF)
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 bg-slate-200/80 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-300/30 text-slate-800 dark:text-white font-bold rounded-xl text-base transition-all hover:-translate-y-0.5">
+                        Contact Me
+                    </a>
+                </div>
+                
+                <!-- Social Channels -->
+                <div class="flex items-center gap-5 border-t border-slate-200 dark:border-slate-800/80 pt-6 w-full">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Connect:</span>
+                    <div class="flex items-center gap-4">
+                        <a id="hero-linkedin" href="#" target="_blank" class="text-slate-500 hover:text-cobalt-700 dark:hover:text-white text-xl transition-all hover:scale-110" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a id="hero-github" href="#" target="_blank" class="text-slate-500 hover:text-cobalt-700 dark:hover:text-white text-xl transition-all hover:scale-110" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a id="hero-email" href="#" class="text-slate-500 hover:text-cobalt-700 dark:hover:text-white text-xl transition-all hover:scale-110" aria-label="Email Link">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a id="hero-phone" href="#" class="text-slate-500 hover:text-cobalt-700 dark:hover:text-white text-xl transition-all hover:scale-110" aria-label="Phone Link">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Graphic (Interactive mockup or avatar placeholder) -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-full max-w-[380px] aspect-[4/5] rounded-[32px] p-2 bg-gradient-to-tr from-cobalt-700 to-sky-400 shadow-2xl shadow-cobalt-500/20 dark:shadow-sky-500/10">
+                    <div class="w-full h-full bg-slate-900 rounded-[28px] overflow-hidden relative flex flex-col justify-between p-6 text-white border border-white/10">
+                        <!-- Abstract design grid lines mimicking the presentation style -->
+                        <div class="absolute inset-0 grid grid-cols-4 grid-rows-5 opacity-10 pointer-events-none">
+                            <div class="border-r border-b border-white"></div>
+                            <div class="border-r border-b border-white"></div>
+                            <div class="border-r border-b border-white"></div>
+                            <div class="border-b border-white"></div>
+                            <div class="border-r border-b border-white"></div>
+                            <div class="border-r border-b border-white"></div>
+                            <div class="border-r border-b border-white"></div>
+                            <div class="border-b border-white"></div>
+                        </div>
+                        
+                        <div class="flex justify-between items-start z-10">
+                            <div class="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
+                                <i class="fa-solid fa-microchip text-sky-400 text-xs"></i>
+                                <span class="text-[10px] font-bold tracking-widest uppercase">IT + Business Matrix</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white/20 flex items-center justify-center bg-white/5">
+                                <i class="fa-solid fa-cubes text-cobalt-400"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Middle visualization mapping (Operations process representation) -->
+                        <div class="my-auto py-8 z-10 flex flex-col justify-center items-center">
+                            <div class="relative flex justify-center items-center w-36 h-36">
+                                <div class="absolute inset-0 rounded-full border border-sky-400/20 animate-spin" style="animation-duration: 20s"></div>
+                                <div class="absolute w-28 h-28 rounded-full border border-dashed border-sky-400/40 animate-spin" style="animation-duration: 10s; animation-direction: reverse;"></div>
+                                <div class="absolute w-20 h-20 rounded-full bg-gradient-to-br from-cobalt-700/50 to-sky-400/50 flex items-center justify-center backdrop-blur-md border border-white/20">
+                                    <i class="fa-solid fa-network-wired text-3xl text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats Block -->
+                        <div class="bg-white/5 border border-white/10 rounded-2xl p-4 z-10 backdrop-blur-md">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2">
+                                <span class="text-xs font-bold text-slate-300">PROCESS METRIC</span>
+                                <span class="text-xs font-bold text-sky-400"><i class="fa-solid fa-circle text-[8px] mr-1 text-emerald-400 animate-ping"></i>Active</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-center">
+                                <div>
+                                    <div class="text-lg font-extrabold text-white leading-none">30%</div>
+                                    <div class="text-[9px] font-bold text-slate-400 uppercase mt-0.5">Effort Cut</div>
+                                </div>
+                                <div>
+                                    <div class="text-lg font-extrabold text-white leading-none">15%</div>
+                                    <div class="text-[9px] font-bold text-slate-400 uppercase mt-0.5">Acc. Boost</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900 transition-colors border-y border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Visual Card/Logo Mockup representing academic strength -->
+                <div class="lg:col-span-5 flex justify-center order-2 lg:order-1" data-aos="fade-right">
+                    <div class="relative w-full max-w-[420px] bg-slate-50 dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+                        <!-- Diagonal Slash accent matching PPT references -->
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-cobalt-700/20 to-transparent rounded-tr-3xl pointer-events-none"></div>
+                        
+                        <h3 class="font-heading font-extrabold text-lg text-cobalt-700 dark:text-sky-400 uppercase tracking-widest mb-6">
+                            Key Core Competencies
+                        </h3>
+                        
+                        <!-- Strengths injection -->
+                        <div id="about-strengths-container" class="space-y-6">
+                            <!-- Dynamic Content Injected here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Written profile & Career Pitch -->
+                <div class="lg:col-span-7 order-1 lg:order-2" data-aos="fade-left">
+                    <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Profile Snapshot</span>
+                    <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-6">
+                        Bridging Technical Expertise and Business Strategy
+                    </h2>
+                    
+                    <p id="about-description" class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-8">
+                        <!-- Dynamic Content Injected -->
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-cobalt-50 dark:bg-cobalt-950 flex items-center justify-center text-cobalt-700 dark:text-sky-400 border border-cobalt-100 dark:border-slate-800">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase">Education Focus</h4>
+                                <p class="text-sm font-semibold">MBA (Operations) | B.Tech IT</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-cobalt-50 dark:bg-cobalt-950 flex items-center justify-center text-cobalt-700 dark:text-sky-400 border border-cobalt-100 dark:border-slate-800">
+                                <i class="fa-solid fa-arrows-spin"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase">Core Domain</h4>
+                                <p class="text-sm font-semibold">Operations, Supply Chain, Lean</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 sm:mt-0">
+                            <span class="w-10 h-10 rounded-xl bg-cobalt-50 dark:bg-cobalt-950 flex items-center justify-center text-cobalt-700 dark:text-sky-400 border border-cobalt-100 dark:border-slate-800">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase">Analytics Scope</h4>
+                                <p class="text-sm font-semibold">Power BI, Advanced Excel, SPSS</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 mt-2 sm:mt-0">
+                            <span class="w-10 h-10 rounded-xl bg-cobalt-50 dark:bg-cobalt-950 flex items-center justify-center text-cobalt-700 dark:text-sky-400 border border-cobalt-100 dark:border-slate-800">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase">Key Specialty</h4>
+                                <p class="text-sm font-semibold">Workflow Automation & KPIs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI Dashboard Section (Career Brand Improvement) -->
+    <section id="kpi" class="py-24 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
+        <!-- background grid graphic -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Performance Dashboard</span>
+                <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-4">
+                    Quantified Business Impact
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    A summary of operational improvements, automation efficiency, and career achievements.
+                </p>
+            </div>
+            
+            <!-- Dynamic KPIs container -->
+            <div id="kpis-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamic Content Injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Matrix Section -->
+    <section id="skills" class="py-24 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Capabilities Grid</span>
+                <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-4">
+                    Skills & Tools Matrix
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    Filter my professional skillset across analytics, supply chain, and strategic competencies.
+                </p>
+                
+                <!-- Category Tabs Menu -->
+                <div id="skills-tabs" class="flex flex-wrap items-center justify-center gap-2 mt-8">
+                    <!-- Dynamic tabs will be injected -->
+                </div>
+            </div>
+            
+            <!-- Skills Display Grid -->
+            <div id="skills-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="200">
+                <!-- Dynamic Content Injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-24 bg-slate-50 dark:bg-slate-950 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll" data-aos="fade-up">
+                <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Professional Journey</span>
+                <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-4">
+                    Internship History
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    Practical exposure in business analytics, operations optimization, and process mapping.
+                </p>
+            </div>
+            
+            <!-- Timeline Line Container -->
+            <div class="relative border-l border-slate-300/60 dark:border-slate-800 pl-8 ml-4 md:ml-32 md:pl-16 space-y-16">
+                <!-- Loop entries dynamically -->
+                <div id="experience-timeline" class="space-y-12">
+                    <!-- Dynamic Experience Cards Injected -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Education Timeline Section -->
+    <section id="education" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-5xl mx-auto px-6">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Academic Base</span>
+                <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-4">
+                    Education Timeline
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    My foundational and advanced training combining Information Technology and Business Administration.
+                </p>
+            </div>
+            
+            <!-- Education timeline block -->
+            <div class="relative border-l border-slate-300/60 dark:border-slate-800 pl-8 ml-4 md:ml-32 md:pl-16 space-y-12">
+                <div id="education-timeline" class="space-y-12">
+                    <!-- Dynamic Education Cards Injected -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Key Projects Section -->
+    <section id="projects" class="py-24 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Case Studies</span>
+                <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-4">
+                    Key Projects
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    Real-world solutions in B2B transformation, reverse supply chain tracking, and data modeling.
+                </p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamic Content Injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section id="certifications" class="py-24 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Global Certifications</span>
+                <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-4">
+                    Courses & Credentials
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    Validation of specialized skills from elite institutions and platforms.
+                </p>
+            </div>
+            
+            <!-- Credentials grid -->
+            <div id="certifications-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamic Content Injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages & Interests (Secondary section) -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <!-- Languages Column -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-md" data-aos="fade-right">
+                <h3 class="font-heading font-extrabold text-2xl mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-language text-cobalt-700 dark:text-sky-400"></i>
+                    Languages
+                </h3>
+                <div id="languages-container" class="space-y-4">
+                    <!-- Dynamic Languages Injected -->
+                </div>
+            </div>
+            
+            <!-- Interests Column -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-md" data-aos="fade-left">
+                <h3 class="font-heading font-extrabold text-2xl mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-heart text-cobalt-700 dark:text-sky-400"></i>
+                    Interests & Hobbies
+                </h3>
+                <div id="interests-grid" class="grid grid-cols-2 gap-4">
+                    <!-- Dynamic Interests Injected -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Professional Contact Section -->
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left column: Info card with scan suggestion -->
+                <div class="lg:col-span-5 flex flex-col justify-between" data-aos="fade-right">
+                    <div>
+                        <span class="text-xs font-bold text-cobalt-700 dark:text-sky-400 uppercase tracking-widest">Connect With Me</span>
+                        <h2 class="font-heading font-extrabold text-4xl sm:text-5xl mt-2 mb-6">
+                            Let's Discuss Opportunities
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 max-w-md">
+                            I am actively seeking MBA internships and career openings in operations management, supply chain optimization, and business process improvements.
+                        </p>
+                        
+                        <!-- Specific channels -->
+                        <div class="space-y-4">
+                            <a id="contact-email" href="#" class="flex items-center gap-4 group p-3.5 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-cobalt-700/30 transition-all">
+                                <span class="w-12 h-12 bg-cobalt-50 dark:bg-cobalt-950 group-hover:bg-cobalt-700 group-hover:text-white rounded-xl flex items-center justify-center text-cobalt-700 dark:text-sky-400 transition-colors">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase">Email</h4>
+                                    <p id="contact-email-text" class="text-sm font-semibold break-all"></p>
+                                </div>
+                            </a>
+                            <a id="contact-phone" href="#" class="flex items-center gap-4 group p-3.5 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-cobalt-700/30 transition-all">
+                                <span class="w-12 h-12 bg-cobalt-50 dark:bg-cobalt-950 group-hover:bg-cobalt-700 group-hover:text-white rounded-xl flex items-center justify-center text-cobalt-700 dark:text-sky-400 transition-colors">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase">Phone</h4>
+                                    <p id="contact-phone-text" class="text-sm font-semibold"></p>
+                                </div>
+                            </a>
+                            <div class="flex items-center gap-4 p-3.5 bg-slate-50 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                                <span class="w-12 h-12 bg-cobalt-50 dark:bg-cobalt-950 rounded-xl flex items-center justify-center text-cobalt-700 dark:text-sky-400">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase">Location</h4>
+                                    <p id="contact-location-text" class="text-sm font-semibold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- QR Code / Share Section (Branding tip) -->
+                    <div class="mt-12 p-6 bg-slate-50 dark:bg-slate-950 rounded-3xl border border-slate-100 dark:border-slate-800 flex items-center gap-6">
+                        <div id="qr-box" class="w-24 h-24 bg-white border border-slate-200 rounded-2xl p-2 flex items-center justify-center shrink-0">
+                            <!-- JS will generate a dynamic mock QR code representing the portfolio URL -->
+                            <div class="w-full h-full flex flex-col justify-between items-center text-slate-300">
+                                <i class="fa-solid fa-qrcode text-5xl text-slate-400 dark:text-slate-600"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-extrabold text-sm mb-1">Scan to Share Profile</h4>
+                            <p class="text-xs text-slate-500 leading-normal mb-3">
+                                Generate a QR code to link recruiters straight to this digital resume.
+                            </p>
+                            <button id="copy-link-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-cobalt-50 dark:bg-slate-900 text-cobalt-700 dark:text-sky-400 font-bold rounded-lg text-[10px] uppercase border border-cobalt-100 dark:border-slate-800 hover:bg-cobalt-700 hover:text-white transition-all">
+                                <i class="fa-solid fa-copy"></i>
+                                Copy Portfolio URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right column: Interactive contact form -->
+                <div class="lg:col-span-7" data-aos="fade-left">
+                    <div class="bg-slate-50 dark:bg-slate-950 p-8 rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-md">
+                        <h3 class="font-heading font-extrabold text-2xl mb-6">Send a Message</h3>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="form-name" class="block text-xs font-bold text-slate-400 uppercase mb-2">Your Name</label>
+                                    <input type="text" id="form-name" required placeholder="e.g. John Doe" class="w-full px-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:border-cobalt-700 dark:focus:border-sky-400 rounded-xl text-sm outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label for="form-email" class="block text-xs font-bold text-slate-400 uppercase mb-2">Email Address</label>
+                                    <input type="email" id="form-email" required placeholder="e.g. johndoe@company.com" class="w-full px-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:border-cobalt-700 dark:focus:border-sky-400 rounded-xl text-sm outline-none transition-all">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="form-subject" class="block text-xs font-bold text-slate-400 uppercase mb-2">Subject</label>
+                                <input type="text" id="form-subject" required placeholder="e.g. Internship Opportunity" class="w-full px-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:border-cobalt-700 dark:focus:border-sky-400 rounded-xl text-sm outline-none transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="form-message" class="block text-xs font-bold text-slate-400 uppercase mb-2">Message</label>
+                                <textarea id="form-message" required rows="5" placeholder="Type your message here..." class="w-full px-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:border-cobalt-700 dark:focus:border-sky-400 rounded-xl text-sm outline-none transition-all resize-none"></p></textarea>
+                            </div>
+                            
+                            <!-- Form feedback response alert -->
+                            <div id="form-feedback" class="hidden p-4 rounded-xl text-sm text-center font-semibold"></div>
+                            
+                            <button type="submit" class="w-full py-4 bg-cobalt-700 hover:bg-cobalt-800 text-white font-bold rounded-xl text-base shadow-lg shadow-cobalt-700/20 transition-all">
+                                Send Message
+                                <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="bg-white text-slate-950 w-8 h-8 rounded-lg flex items-center justify-center font-bold text-lg">N</span>
+                <span class="font-heading font-extrabold tracking-widest text-sm text-slate-400">NITHISH SHRIRAM PORTFOLIO</span>
+            </div>
+            
+            <p class="text-xs text-slate-500 text-center md:text-right">
+                &copy; 2026 Nithish Shriram. Built with HTML5, CSS3, Tailwind CSS & Vanilla JS. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 z-40 w-12 h-12 bg-cobalt-700 dark:bg-white text-white dark:text-slate-950 rounded-full items-center justify-center hover:scale-110 shadow-lg transition-all" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- Core Javascript Files -->
+    <!-- Load data first, then app controllers -->
+    <script src="portfolio-data.js"></script>
+    <!-- Animate On Scroll Script CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

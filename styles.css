@@ -1,0 +1,218 @@
+/* Premium Styles for Nithish Shriram Portfolio */
+
+/* Base Transitions & Variables */
+:root {
+    --transition-speed: 0.3s;
+    --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Global Adjustments */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(30, 41, 59, 0.6);
+}
+
+/* Advanced Hover Animations */
+.hover-glow {
+    transition: transform var(--transition-speed) var(--transition-curve), 
+                box-shadow var(--transition-speed) var(--transition-curve),
+                border-color var(--transition-speed) var(--transition-curve);
+}
+
+.hover-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.dark .hover-glow:hover {
+    box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* Timeline Custom Styles */
+.timeline-dot::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -37px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2563eb;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.dark .timeline-dot::before {
+    background: #38bdf8;
+    border-color: #0f172a;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+}
+
+/* Hover effects for timelines */
+.timeline-item:hover .timeline-dot::before {
+    background: #fff;
+    border-color: #2563eb;
+    transform: scale(1.1);
+}
+
+.dark .timeline-item:hover .timeline-dot::before {
+    background: #0f172a;
+    border-color: #38bdf8;
+}
+
+@media (min-width: 768px) {
+    .timeline-dot::before {
+        left: -73px;
+        width: 22px;
+        height: 22px;
+        top: 8px;
+    }
+}
+
+/* Key Project Overlay Slide-up details */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-bg-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.project-card:hover .project-bg-img {
+    transform: scale(1.08);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.1) 100%);
+    z-index: 2;
+}
+
+.project-content {
+    position: relative;
+    z-index: 3;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom radial background grid for header / visual depth */
+.bg-grid-glow {
+    background-image: radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.15) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* Tab Active Custom Borders */
+.tab-active {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3) !important;
+}
+
+.dark .tab-active {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Animations helper */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Circular skill ring progress indicators */
+.skill-circle-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.skill-circle-svg {
+    transform: rotate(-90deg);
+}
+
+.skill-circle-bg {
+    fill: none;
+    stroke: #e2e8f0;
+    stroke-width: 4;
+}
+
+.dark .skill-circle-bg {
+    stroke: #1e293b;
+}
+
+.skill-circle-progress {
+    fill: none;
+    stroke: #2563eb;
+    stroke-width: 4;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.dark .skill-circle-progress {
+    stroke: #38bdf8;
+}
