@@ -212,7 +212,7 @@ const PORTFOLIO_DATA = {
       issuer: "TCS iON",
       date: "2024",
       credentialId: "TCS-VMSC-88910",
-      verifyUrl: "https://www.tcsion.com"
+      verifyUrl: "assets/404195_71315_7877138.pdf"
     },
     {
       name: "Business Analytics with Excel",
