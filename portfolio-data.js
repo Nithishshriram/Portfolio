@@ -14,7 +14,7 @@ const PORTFOLIO_DATA = {
       location: "Coimbatore, India",
       linkedin: "https://linkedin.com/in/nithishshriram",
       github: "https://github.com/Nithishshriram", 
-      resumeDownloadUrl: "#" // Link of PDF 
+      resumeDownloadUrl: "assets/Nithish_Shriram_Resume.pdf" 
     }
   },
 
