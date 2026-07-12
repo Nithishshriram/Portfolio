@@ -215,11 +215,11 @@ const PORTFOLIO_DATA = {
       verifyUrl: "assets/404195_71315_7877138.pdf"
     },
     {
-      name: "Business Analytics with Excel",
+      name: "Microsoft Advertising Certified Professional",
       issuer: "Microsoft",
       date: "2023",
       credentialId: "MS-BAE-2023",
-      verifyUrl: "https://microsoft.com"
+      verifyUrl: "assets/NITHISH SHRIRAM_S S-BAAP_CERT (1).pdf"
     },
     {
       name: "Service Design",
@@ -240,7 +240,7 @@ const PORTFOLIO_DATA = {
       issuer: "Accenture",
       date: "2023",
       credentialId: "ACN-DM-77821",
-      verifyUrl: "https://accenture.com"
+      verifyUrl: "assets/digital-skills-digital-marketing_certificate_of_achievement_ronn962.pdf"
     },
     {
       name: "Int'l Business Leadership",
