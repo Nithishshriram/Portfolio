@@ -108,7 +108,7 @@ const PORTFOLIO_DATA = {
       company: "Roots Industries",
       location: "Coimbatore, India",
       period: "May 2026 - Jul 2026",
-      logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=120", // Premium building placeholder
+      logo: "https://share.google/oRQ3cjBNCt16WPXQx", // Premium building placeholder
       highlights: [
         "Identified operational abnormalities across automation and assembly lines by analyzing time delays, space constraints, and workflow inefficiencies.",
         "Proposed process improvements, including digital dashboards, SOPs, and tablet-based maintenance checklists, to boost efficiency and visibility.",
