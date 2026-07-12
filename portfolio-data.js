@@ -257,7 +257,7 @@ const PORTFOLIO_DATA = {
   ],
 
   interests: [
-    { name: "Operations & Supply Chain", icon: "fa-truck-fast" },
+    { name: "Product Prototyping", icon: "fa-scissors" },
     { name: "Data Analytics & Visualization", icon: "fa-chart-pie" },
     { name: "Business Process Automation", icon: "fa-robot" },
     { name: "Travel & Exploration", icon: "fa-compass" }
