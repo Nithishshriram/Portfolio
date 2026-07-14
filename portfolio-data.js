@@ -229,7 +229,7 @@ const PORTFOLIO_DATA = {
       name: "Advanced Google Analytics",
       issuer: "Google",
       credentialId: "GOOG-AGA-9923",
-      verifyUrl: "https://analytics.google.com"
+      verifyUrl: "assets/Course_Certificate (2) (1).pdf"
     },
     {
       name: "Digital Marketing",
