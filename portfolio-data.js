@@ -210,44 +210,39 @@ const PORTFOLIO_DATA = {
     {
       name: "Vendor Management in Supply Chain",
       issuer: "TCS iON",
-      date: "2024",
       credentialId: "TCS-VMSC-88910",
       verifyUrl: "assets/404195_71315_7877138.pdf"
     },
     {
       name: "Microsoft Advertising Certified Professional",
       issuer: "Microsoft",
-      date: "2023",
       credentialId: "MS-BAE-2023",
       verifyUrl: "assets/NITHISH SHRIRAM_S S-BAAP_CERT (1).pdf"
     },
     {
       name: "Service Design",
       issuer: "Deakin University, Australia",
-      date: "2024",
       credentialId: "DKN-SD-29931",
       verifyUrl: "https://www.deakin.edu.au"
     },
     {
       name: "Advanced Google Analytics",
       issuer: "Google",
-      date: "2023",
       credentialId: "GOOG-AGA-9923",
       verifyUrl: "https://analytics.google.com"
     },
     {
       name: "Digital Marketing",
       issuer: "Accenture",
-      date: "2023",
       credentialId: "ACN-DM-77821",
       verifyUrl: "assets/digital-skills-digital-marketing_certificate_of_achievement_ronn962.pdf"
     },
     {
       name: "Int'l Business Leadership",
       issuer: "UCSI University, Malaysia",
-      date: "2024",
+      date: "2025",
       credentialId: "UCSI-IBL-44512",
-      verifyUrl: "https://www.ucsiuniversity.edu.my"
+      verifyUrl: "assets/UCSI Certif.pdf"
     }
   ],
 
